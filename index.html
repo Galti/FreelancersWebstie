@@ -6,13 +6,12 @@
     <title>Webstorm</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--<script src="js/vendor/modernizr-2.8.3.min.js"></script>-->
 </head>
 <body>
 <!--[if lt IE 8]>
@@ -20,8 +19,55 @@
  portfolioItems  your browser</a> to improve your experience.</p>
 <![endif]-->
 
+<nav>
+    <div>
+        <span id="menu-button-close">Close</span>
+        <span id="brand-name">Odesn</span>
+        <!--:TODO &ndash;&gt; Tables need to be converted to flex boxes -->
+        <table>
+            <tr>
+                <td class="menu-item-name">Studio</td>
+                <td>-Services, culture & people</td>
+            </tr>
+            <tr>
+                <td class="menu-item-name">Studio</td>
+                <td>-Services, culture & people</td>
+            </tr>
+            <tr>
+                <td class="menu-item-name">Studio</td>
+                <td>-Services, culture & people</td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td class="social-name">- Instagram</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="social-name">- Facebook</td>
+                <td>odesignam@gmail.com</td>
+                <td>- Terms and Conditions</td>
+            </tr>
+            <tr>
+                <td class="social-name">- LinkedIn</td>
+                <td>+374 95-24-87-00</td>
+                <td>- Privacy Policy</td>
+            </tr>
+            <tr>
+                <td class="social-name">- Twitter</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+    </div>
+
+</nav>
+
 <header id="main">
-    <span id="menu">Menu</span>
+    <span id="menu-button-open">Menu</span>
     <span id="welcome">Welcome</span>
     <h1 id="welcome-text">A Creative Agency for Forward Thinking Brands.</h1>
 
@@ -41,6 +87,8 @@
 
 <!--<script src="js/plugins.js"></script>-->
 <script src="js/vendor/jquery-3.2.0.js"></script>
+<script src="js/global-variables.js"></script>
+
 <script type="text/javascript" src="js/main.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
