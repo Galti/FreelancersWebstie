@@ -31,13 +31,8 @@ $(document).ready(function(){
                 // window.location.replace(obj.linkToGo);
                 window.location.href = obj.linkToGo;
             }
-            console.log(obj);
         })
     });
-
-    // $('#menu-button').on('click', function(){
-    //     alert('aa');
-    // });
 });
 
 
@@ -66,22 +61,50 @@ $('#arrow-down').on('click', function() {
     }, 500);
 });
 
+$('.secondary-menu-button').on('click', function() {
+    $portfolios.css({'transition-duration': '200ms', 'left': window.innerWidth - $portfolios.width() -17 + 'px', 'display': 'block'});
+    $('html, body').animate({
+        scrollTop: $portfolios.offset().top
+    }, 300);
+
+    if($portfolios.css('display') === 'block'){
+        $('body').click(function(evt){
+            if(evt.target.id !== '' && document.getElementById(evt.target.id).className !== 'secondary-menu-button'){
+                $portfolios.css({ 'transition-duration': '100ms', 'left': '100%'});
+                setTimeout(function () {
+                    $portfolios.css('display', 'none');
+                }, 200);
+            }
+        });
+    }
+});
+
 function test(){
-    $('header').css('height', window.innerHeight - 120 + 'px');
-    $('#portfolios').css('margin-left', window.innerWidth - 587 - 50 + 'px');
+    $header.css('height', window.innerHeight - 120 + 'px');
+    $portfolios.css({ 'left': '100%', 'display': 'none', 'height': $header.height()});
+    // $portfolios.css('margin-left', window.innerWidth - 517 - 50 + 'px');
     $('#arrow-down').css('margin-top', window.innerHeight - 160 + 'px');
+    $('#secondary-menu-button').css('margin-top', window.innerHeight - 160 + 'px');
     $('#welcome-text').css('width', window.innerWidth - 587 - 50 + 'px');
+
 }
+
+
 
 function insertPortfolios() {
     portfolioItems.forEach(function (obj) {
-        $('#portfolios').append(
+        $portfolios.append(
             "<div class='project'>" +
                 "<img class='projectImage' src=" + obj.image + "> " +
                 "<div class='projectName'><span>" + obj.name + "</span></div>" +
             "</div>"
         )
     });
+    // var a = $portfolios.width;
+    // alert($portfolios.width());
+    var lengthOfPortfolioItems = $portfolios.width()/2;
+    $('.projectImage').css('width', lengthOfPortfolioItems);
+    // $('.project').css('width', lengthOfPortfolioItems);
 
     var content = "<ul>";
 

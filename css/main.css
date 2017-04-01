@@ -101,7 +101,6 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
 *{
     box-sizing: border-box;
     text-decoration: none;
@@ -109,6 +108,11 @@ textarea {
     list-style: none;
     --marginRightLeftPixels: 50px;
     --marginTopBottomPixels: 20px;
+    font-family: 'Roboto' , 'Times', 'serif';
+}
+
+body {
+    overflow-x: hidden;
 }
 
 a {
@@ -137,12 +141,21 @@ nav div {
     cursor: pointer;
 }
 
+#brand-name-in-menu {
+    position: absolute;
+    right: var(--marginRightLeftPixels);
+    margin-top: var(--marginTopBottomPixels);
+}
+
 #brand-name {
     position: absolute;
     right: var(--marginRightLeftPixels);
     margin-top: var(--marginTopBottomPixels);
-    font-size: 20px;
 }
+#brand-name-in-menu, #brand-name {
+    font-size: 28px;
+}
+
 
 nav table:nth-child(3) {
     margin-top: 50px;
@@ -184,9 +197,8 @@ header {
 }
 
 #portfolios {
-    position: relative;
-    height: 100%;
-    width: 570px;
+    position: absolute;
+    width: 500px;
     right:0;
     /*border:2px solid aqua;*/
     /*overflow-y: auto;*/
@@ -204,7 +216,10 @@ header {
 }
 
 .projectImage {
+    display: flex;
     /*border:1px solid red;*/
+    width: 100%;
+    height: 100%;
 }
 
 .projectName {
@@ -233,6 +248,13 @@ header {
     position: absolute;
     width: 32px;
     /*margin-left: 50px;*/
+}
+
+#secondary-menu-button {
+    cursor: pointer;
+    position: absolute;
+    height: 32px;
+    right: var(--marginRightLeftPixels);
 }
 
 #menu-button-open {
@@ -266,9 +288,9 @@ section {
     margin-left: 100px;
 }
 
-#portfolios-list ul li {
+#portfolios-list ul li a{
     font-weight: bold;
-    color: #2c201f;
+    color: #ffffff;
     font-size: 24px;
 }
 

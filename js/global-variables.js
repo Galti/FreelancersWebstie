@@ -5,3 +5,5 @@
 var isMenuOpen = false;
 $nav = $('nav');
 $body = $('body');
+$portfolios = $("#portfolios");
+$header = $('header');
